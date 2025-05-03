@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Page Modern</title>
+  <style>
+    /* Reset dan dasar */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Hero */
+    header {
+      background: #007BFF;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    header button {
+      background: white;
+      color: #007BFF;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    header button:hover {
+      background: #e6e6e6;
+    }
+
+    /* Features Section */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 60px 0;
+    }
+    .feature {
+      background: white;
+      flex: 1 1 30%;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-10px);
+    }
+    .feature h3 {
+      margin-bottom: 15px;
+      color: #007BFF;
+    }
+    .feature p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: white;
+      padding: 40px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 60px;
+    }
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #007BFF;
+    }
+    .contact form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact input, .contact textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .contact button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact button:hover {
+      background: #0056b3;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+      }
+      .feature {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Selamat Datang di Website Kami</h1>
+      <p>Menyediakan solusi teknologi modern untuk bisnis Anda.</p>
+      <button id="btnLearnMore">Pelajari Lebih Lanjut</button>
+    </div>
+  </header>
+
+  <section class="container features" id="features">
+    <div class="feature">
+      <h3>Kecepatan Tinggi</h3>
+      <p>Website kami dioptimalkan untuk performa terbaik dan loading cepat.</p>
+    </div>
+    <div class="feature">
+      <h3>Desain Responsif</h3>
+      <p>Tampilan yang menyesuaikan dengan berbagai perangkat, dari desktop hingga smartphone.</p>
+    </div>
+    <div class="feature">
+      <h3>Mudah Digunakan</h3>
+      <p>Antarmuka yang sederhana dan intuitif untuk semua pengguna.</p>
+    </div>
+    
+  </section>
+
+  <section class="container contact" id="contact">
+    <h2>Hubungi Kami</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Nama Anda" required />
+      <input type="email" id="email" placeholder="Email Anda" required />
+      <textarea id="message" rows="5" placeholder="Pesan Anda" required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
+
+  <script>
+    // Scroll ke fitur saat tombol diklik
+    document.getElementById('btnLearnMore').addEventListener('click', () => {
+      document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Tangani submit form kontak
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+
+      if(name && email && message) {
+        alert(`Terima kasih, ${name}! Pesan Anda sudah kami terima.`);
+        this.reset();
+      } else {
+        alert('Mohon lengkapi semua kolom.');
+      }
+    });
+  </script>
+
+</body>
+</html>
