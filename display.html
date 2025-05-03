@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Elemen block: mengambil seluruh lebar baris */
+    .block {
+      display: block;
+      background-color: lightblue;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Elemen inline: hanya selebar konten */
+    .inline {
+      display: inline;
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Elemen inline-block: seperti inline tapi bisa diatur ukuran */
+    .inline-block {
+      display: inline-block;
+      width: 150px;
+      height: 100px;
+      background-color: lightgreen;
+      margin: 5px;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    /* Elemen none: tidak ditampilkan */
+    .none {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<span class="block">Ini elemen dengan display: block</span>
+<span class="block">Ini elemen dengan display: block</span>
+
+<div class="inline">Ini elemen dengan display: inline</div>
+<div class="inline"> - Contoh inline lain</div>
+
+<div class="inline-block">Ini inline-block</div>
+<div class="inline-block">Ini juga inline-block</div>
+
+<div class="none">Elemen ini tidak terlihat karena display: none</div>
+
+</body>
+</html>
